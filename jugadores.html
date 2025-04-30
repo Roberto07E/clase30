@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jugadores Real Madrid 2017</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .card-img-top {
+      width: 100%;
+      max-height: 250px;
+      object-fit: contain;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background-color: #f8f9fa; /* fondo claro para evitar bordes negros si la imagen no ocupa todo */
+      padding: 10px;
+    }
+    
+  </style>
+</head>
+<body class="bg-light text-dark">
+  <header class="bg-dark text-white text-center py-4">
+    <h1>Real Madrid - Once Titular 2017</h1>
+    <p>Campeones de la Champions League</p>
+  </header>
+
+  <!-- Menú de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <div class="container">
+      <a class="navbar-brand" href="#">Real Madrid</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="historia.html">Historia</a></li>
+          <li class="nav-item"><a class="nav-link active" href="jugadores.html">Jugadores 2017</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h2 class="text-center mb-4">Jugadores del Once Titular - Final 2017</h2>
+    <div class="row" id="playerCards"></div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3 mt-4">
+    <p>&copy; 2025 Real Madrid - Proyecto Universidad Don Bosco</p>
+  </footer>
+
+  <script>
+    const players = [
+      { name: "Keylor Navas", img: "img/keylor.jpg", description: "Portero costarricense, clave con sus atajadas en partidos decisivos." },
+      { name: "Dani Carvajal", img: "img/carvajal.jpg", description: "Lateral derecho incansable con gran proyección ofensiva." },
+      { name: "Sergio Ramos", img: "img/ramos.jpg", description: "Capitán y líder defensivo del equipo." },
+      { name: "Raphaël Varane", img: "img/varane.jpg", description: "Defensor veloz y seguro, pareja ideal de Ramos." },
+      { name: "Marcelo", img: "img/marcelo.jpg", description: "Lateral izquierdo con magia, técnica y alegría." },
+      { name: "Casemiro", img: "img/casemiro.jpg", description: "Pivote defensivo, clave en el equilibrio del equipo." },
+      { name: "Luka Modrić", img: "img/moderic.jpg", description: "Cerebro del medio campo, con visión y técnica." },
+      { name: "Toni Kroos", img: "img/kroos.jpg", description: "Precisión alemana, distribuidor del balón perfecto." },
+      { name: "Isco", img: "img/isco.jpg", description: "Enganche creativo, brilló en la final con su control y regate." },
+      { name: "Karim Benzema", img: "img/benzema.jpg", description: "Delantero inteligente y asociativo." },
+      { name: "Cristiano Ronaldo", img: "img/cristiano.jpg", description: "Máximo goleador, figura de la final con dos goles." }
+    ];
+
+    const container = document.getElementById('playerCards');
+    players.forEach(player => {
+      const col = document.createElement('div');
+      col.className = 'col-lg-4 col-md-6 col-sm-12 mb-4';
+
+      col.innerHTML = `
+        <div class="card h-100 shadow">
+          <img src="${player.img}" class="card-img-top" alt="${player.name}">
+          <div class="card-body">
+            <h5 class="card-title">${player.name}</h5>
+            <p class="card-text">${player.description}</p>
+          </div>
+        </div>
+      `;
+
+      container.appendChild(col);
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>
